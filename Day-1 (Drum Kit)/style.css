@@ -1,0 +1,73 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url('image/mantas.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    background-color: #000000a9;
+    backdrop-filter: blur(4px);
+    display: grid;
+    place-content: center;
+}
+
+.keys {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.keys .key {
+    width: 80px;
+    height: 80px;
+    background-color: white;
+    background-image: linear-gradient(135deg, #999 , #fff);
+    border-radius: 12px;
+    /* border: 1px solid #999; */
+    box-shadow: inset 2px 2px 0 #fff,
+                 2px 2px 2px #000   ;
+    transition: all .07s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.keys .key kbd {
+    font-size: 2rem;
+    pointer-events: none;
+}
+
+.keys .key span {
+    text-transform: uppercase;
+    font-size: .85rem;
+    color: grey ;
+    pointer-events: none;
+}
+
+.key.playing {
+    outline: 5px solid tomato;
+    transform: scale(1.1);
+}
+
+@media screen and (max-width: 500px) {
+    .wrapper {
+        padding-inline: 1rem;
+    }
+    .keys .key {
+        width: 100px;
+        height: 100px;
+    }
+}
